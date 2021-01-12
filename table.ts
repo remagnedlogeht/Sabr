@@ -150,7 +150,7 @@ export class SabrTable<T> {
   }
 
   /** Creates a new document into a table. */
-  create(id: string, data: Partial<T> = {}) {
+  async create(id: string, data: Partial<T> = {}) {
     if (this.has(id)) {
       this.sabr.error(
         `[Sabr Error: create] Cannot create already existing file file://${this.sabr.directoryPath}${this.name}/${id}.json`,
